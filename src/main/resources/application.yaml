@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: weather-info-service
+
+  threads:
+    virtual:
+      enabled: true
+
+  output:
+    ansi:
+      enabled: ALWAYS
+
+
+  datasource:
+    url: jdbc:h2:mem:meeting_calendar_db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: sa
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    #      ddl-auto: create-drop  # update schema on application startup; could be 'none' or 'validate' in production
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true  # show SQL queries in console for debugging
+    properties:
+      hibernate:
+        format_sql: true  # pretty print SQL in the console
+  # H2 console configuration (optional, for debugging)
+  h2:
+    console:
+      enabled: true
+      path: /h2-console  # You can access the H2 console in development at this URL
+
+# Logging configuration (optional for better visibility)
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type: TRACE  # Trace Hibernate entity operations
+    spring:
+      datasource: DEBUG
+
