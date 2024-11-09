@@ -56,7 +56,7 @@ public class WeatherServiceImpl implements WeatherService {
         return weatherInfoRepository.save(weatherInfo);
     }
 
-    private PinCodeLocation fetchAndSaveLocation(String pinCode) {
+    PinCodeLocation fetchAndSaveLocation(String pinCode) {
         String url = String.format("%s?zip=%s,IN&appid=%s", GEOCODING_URL, pinCode, OPEN_WEATHER_API_KEY);
         ResponseEntity<Map<String, Object>> response = restTemplate.exchange(url,
                 org.springframework.http.HttpMethod.GET,
@@ -178,7 +178,7 @@ public class WeatherServiceImpl implements WeatherService {
         }
     }
 
-    private void validateApiResponse(ResponseEntity<Map<String, Object>> response) {
+    void validateApiResponse(ResponseEntity<Map<String, Object>> response) {
         if (!response.getStatusCode().is2xxSuccessful() || response.getBody() == null) {
             throw new RuntimeException("Failed to fetch valid data from OpenWeather API");
         }
