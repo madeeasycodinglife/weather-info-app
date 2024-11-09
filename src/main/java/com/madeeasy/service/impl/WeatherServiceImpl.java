@@ -114,6 +114,7 @@ public class WeatherServiceImpl implements WeatherService {
             // Extract weather description
             List<Map<String, Object>> weatherList = (List<Map<String, Object>>) weatherData.get("weather");
             Map<String, Object> weatherItem = weatherList.get(0); // Assume the first item in the list
+            String mainDescription = (String) weatherItem.get("main");
             String weatherDescription = (String) weatherItem.get("description");
             String icon = (String) weatherItem.get("icon");
 
@@ -152,7 +153,7 @@ public class WeatherServiceImpl implements WeatherService {
             // Create and save WeatherDetail entity (related to WeatherInfo)
             WeatherDetail weatherDetail = WeatherDetail.builder()
                     .weatherInfo(savedWeatherInfo)
-                    .main(weatherDescription) // Main weather condition (e.g., "Clear")
+                    .main(mainDescription) // Main weather condition (e.g., "Clear")
                     .description(weatherDescription) // Weather description (e.g., "clear sky")
                     .icon(icon) // Weather icon (optional)
                     .temp(temperature)

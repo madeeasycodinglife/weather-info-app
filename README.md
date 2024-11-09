@@ -29,7 +29,7 @@ The API will respond with a detailed weather report in JSON format. Below is an 
 
 ```json
 {
-    "id": 2,
+    "id": 1,
     "pinCode": "721151",
     "date": "2024-11-09",
     "country": "IN",
@@ -45,12 +45,12 @@ The API will respond with a detailed weather report in JSON format. Below is an 
     },
     "weatherDetails": [
         {
-            "id": 2,
-            "main": "clear sky",
+            "id": 1,
+            "main": "Clear",
             "description": "clear sky",
             "icon": "01d",
-            "temp": 28.19,
-            "feelsLike": 29.39,
+            "temp": 28.2,
+            "feelsLike": 29.4,
             "humidity": 57,
             "pressure": 1015,
             "cloudiness": 0,
@@ -78,7 +78,7 @@ The API will respond with a detailed weather report in JSON format. Below is an 
     - `cityName`: The name of the city.
 - `weatherDetails`: An array containing weather details, including:
     - `id`: Unique ID for the weather record.
-    - `main`: Main weather condition (e.g., clear sky, rain).
+    - `main`: Main weather condition (e.g., clear, rain).
     - `description`: Detailed description of the weather condition.
     - `icon`: Icon representing the weather condition.
     - `temp`: Current temperature in Celsius.
