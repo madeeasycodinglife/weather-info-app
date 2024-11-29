@@ -100,13 +100,13 @@ The API will respond with a detailed weather report in JSON format. Below is an 
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/weather-info-api.git
+    git clone https://github.com/madeeasycodinglife/weather-info-app.git
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd weather-info-api
+    cd weather-info-app
     ```
 
 3. Build the project using Maven:
